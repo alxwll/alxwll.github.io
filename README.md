@@ -4,4 +4,4 @@ Startseite für [Ready. Set.](https://alxwll.github.io/readyset/), die Workout-A
 
 Weitere Projektseiten:
 
-- [Buchungstool](https://alxwll.github.io/buchungstool/) – eigenes Terminbuchungs-Tool statt Koalendar-Abo
+- [Slot. In.](https://alxwll.github.io/slotin/) – alle Kalender, ein Buchungslink
