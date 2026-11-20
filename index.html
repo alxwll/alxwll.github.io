@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ready. Set. On. Track. Wort. Laut. Slot. In. – Apps von Alex aus Stuttgart</title>
 <meta name="description" content="Vier Apps aus Stuttgart: Workouts mit animierten Figuren, ein Lauf-Coach, ein Vorleser für eigene E-Books und ein Buchungslink für alle Kalender.">
-<meta name="theme-color" content="#F5F5F5">
+<meta name="theme-color" content="#F7A8B6">
 <meta property="og:title" content="Ready. Set. On. Track. Wort. Laut. Slot. In.">
 <meta property="og:description" content="Vier Apps aus Stuttgart, gebaut für den eigenen Alltag.">
 <meta property="og:url" content="https://alxwll.github.io/">
@@ -30,47 +30,60 @@ a{color:inherit}
 :focus-visible{outline:3px solid currentColor;outline-offset:4px;border-radius:6px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 
-/* ---------- top ---------- */
-.top{padding:22px 0 0}
+/* ---------- stage: pink hero with the photo ---------- */
+.stage{background:radial-gradient(120% 90% at 60% 40%,#FDC3CC 0%,#F7A8B6 55%,#EE8FA0 100%);color:#2A1420;overflow:hidden}
+.top{padding:22px 0 0;position:relative;z-index:3}
 .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .me{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.03em}
-.me .d{color:var(--olive)}
-.top nav{font-size:15px;color:var(--muted)}
-.top nav a{text-decoration:none;border-bottom:1px solid var(--line)}
-.top nav a:hover{color:var(--ink);border-color:var(--ink)}
+.me .d{color:#fff}
+.top nav{font-size:15px}
+.top nav a{text-decoration:none;border-bottom:1.5px solid currentColor}
 
-/* ---------- hero: the four names ---------- */
-.hero{padding:clamp(40px,8vw,96px) 0 clamp(40px,7vw,80px)}
-.intro{font-weight:400;max-width:34ch;font-size:clamp(18px,2vw,21px);color:var(--muted);margin-bottom:clamp(28px,4vw,48px)}
-.intro b{color:var(--ink);font-weight:700}
-.names{list-style:none;border-top:1px solid var(--line)}
-.names li{border-bottom:1px solid var(--line)}
-.names a{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 32px;padding:clamp(10px,1.6vw,18px) 0;text-decoration:none}
-.names .what{font-size:15px;color:var(--muted);text-align:right;max-width:24ch;line-height:1.35;transition:color .2s}
-.names a:hover .what,.names a:focus-visible .what{color:var(--ink)}
-.wm{display:inline-flex;align-items:center;line-height:.9;font-size:clamp(50px,10.5vw,138px);white-space:nowrap}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,340px) 520px;gap:40px;align-items:end}
+.intro{font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.2;letter-spacing:-.015em;padding-bottom:clamp(40px,8vw,120px);max-width:16ch}
+.intro b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(40px,5.2vw,64px);line-height:.95;letter-spacing:-.04em;margin-bottom:16px}
+.pic{position:relative;margin-top:-30px}
+.pic img{display:block;width:100%;height:auto;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 22%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%);mask-composite:intersect}
 
-/* each name keeps its own brand */
+/* speech bubbles in the chunky "Jung & mutig" block style */
+.bub{position:absolute;left:var(--x);top:var(--y);z-index:2;display:flex;flex-direction:column;gap:4px;padding:12px 16px 11px;border:3px solid #141414;border-radius:18px;box-shadow:6px 6px 0 #141414;text-decoration:none;transform:rotate(var(--r,0deg));transition:transform .18s ease,box-shadow .18s ease;white-space:nowrap}
+.bub:hover{transform:rotate(var(--r,0deg)) translate(-2px,-3px);box-shadow:8px 9px 0 #141414}
+.bub:active{transform:rotate(var(--r,0deg)) translate(3px,3px);box-shadow:2px 2px 0 #141414}
+.bub:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.bub .wm{font-size:30px}
+.bub .sub{font:500 13px/1.2 var(--body)}
+.bub::after{content:"";position:absolute;width:18px;height:18px;background:inherit;border:3px solid #141414;border-top:0;border-left:0}
+.tail-r::after{right:-11px;top:calc(50% - 9px);transform:rotate(-45deg)}
+.tail-l::after{left:-11px;top:calc(50% - 9px);transform:rotate(135deg)}
+.tail-b::after{bottom:-11px;left:var(--tx,30px);transform:rotate(45deg)}
+.tail-t::after{top:-11px;left:var(--tx,30px);transform:rotate(-135deg)}
+
+.b-rs{background:#B59AF0;color:var(--rs-ink)} .b-rs .wm-rs .d{background:#fff}
+.b-ot{background:var(--ot-bg);color:var(--ot-ink)} .b-ot .wm-ot{color:var(--ot-ink)} .b-ot .sw{background:#5B3C99} .b-ot .sw i{background:var(--ot-ink)}
+.b-ot.on .sw{background:var(--ot-lime)} .b-ot.on .sw i{background:var(--ot-bg)}
+.b-wl{background:var(--wl-bg);color:var(--wl-ink)}
+.b-si{background:var(--si-bg);color:#fff} .b-si .wm-si{color:#fff}
+
+.wm{display:inline-flex;align-items:center;line-height:.9;white-space:nowrap}
 .wm-rs{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;color:var(--rs-ink);letter-spacing:.005em}
 .wm-rs .d{display:inline-block;width:.2em;height:.2em;border-radius:50%;background:var(--rs-dot);margin-left:.04em;align-self:flex-end;margin-bottom:.1em}
 .wm-rs .gap{width:.22em}
-.names .wm-ot{font-size:clamp(34px,8.4vw,100px)}
 .wm-ot{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;color:var(--ot-bg);letter-spacing:.01em;gap:.24em}
 .sw{display:inline-flex;width:1.45em;height:.84em;border-radius:99px;background:#D9D2E8;padding:.1em;transition:background .45s ease}
-.sw i{width:.64em;height:.64em;border-radius:99px;background:var(--ot-bg);transition:transform .5s cubic-bezier(.6,-.4,.3,1.4)}
-.on .sw{background:var(--ot-lime)} .on .sw i{transform:translateX(.61em)}
+.sw i{width:.64em;height:.64em;border-radius:99px;background:var(--ot-bg);transition:transform .5s cubic-bezier(.6,-.4,.3,1.4),background .45s ease}
+.on .sw i{transform:translateX(.61em)}
 .wm-wl{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.045em;color:var(--wl-ink)}
 .wm-wl .d{color:var(--wl-red)}
 .wm-si{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;color:var(--si-bg)}
 .wm-si .d{color:var(--si-dot)}
 
-/* one orchestrated moment: the names land one after another, then the switch flips on */
+/* one orchestrated moment: the bubbles pop in one after another, then the switch flips on */
 @media (prefers-reduced-motion:no-preference){
-  .js .names li{opacity:0;transform:translateY(18px)}
-  .js.ready .names li{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
-  .js.ready .names li:nth-child(2){transition-delay:.12s}
-  .js.ready .names li:nth-child(3){transition-delay:.24s}
-  .js.ready .names li:nth-child(4){transition-delay:.36s}
+  .js .bub{opacity:0;transform:rotate(var(--r,0deg)) scale(.4)}
+  .js.ready .bub{opacity:1;transform:rotate(var(--r,0deg));transition:opacity .25s ease var(--d),transform .55s cubic-bezier(.3,1.6,.5,1) var(--d)}
+  .js.ready .bub:hover{transform:rotate(var(--r,0deg)) translate(-2px,-3px);transition-delay:0s}
 }
 
 /* ---------- product bands ---------- */
@@ -116,8 +129,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
 footer a{text-decoration-color:var(--olive);text-underline-offset:3px}
 
 @media (max-width:760px){
-  .names a{grid-template-columns:1fr}
-  .names .what{text-align:left;max-width:none}
+  .hero .wrap{grid-template-columns:1fr;gap:8px}
+  .intro{padding:20px 0 0;max-width:none}
+  .pic{margin:0 -24px}
+  .bub{padding:8px 11px 7px;border-width:2.5px;border-radius:14px;box-shadow:4px 4px 0 #141414}
+  .bub .wm{font-size:19px}
+  .bub .sub{display:none}
+  .bub::after{width:12px;height:12px;border-width:2.5px}
+  .tail-r::after{right:-7px;top:calc(50% - 6px)} .tail-l::after{left:-7px;top:calc(50% - 6px)}
+  .tail-b::after{bottom:-7px} .tail-t::after{top:-7px}
+  .b-rs{--x:4%!important;--y:6%!important} .b-wl{--x:62%!important;--y:19%!important}
+  .b-ot{--x:52%!important;--y:52%!important} .b-si{--x:58%!important;--y:88%!important}
   .band .wrap,.band.flip .wrap{grid-template-columns:1fr}
   .band.flip .shot{order:0}
   .shot{max-width:250px}
@@ -126,33 +148,36 @@ footer a{text-decoration-color:var(--olive);text-underline-offset:3px}
 </style>
 </head>
 <body>
+<main>
+<div class="stage">
 <header class="top">
   <div class="wrap">
     <a class="me" href="#" aria-label="Alex aus Stuttgart">Alex<span class="d">.</span> Stuttgart<span class="d">.</span></a>
-    <nav aria-label="Projekte"><a href="https://github.com/alxwll">GitHub</a></nav>
+    <nav aria-label="Profil"><a href="https://github.com/alxwll">GitHub</a></nav>
   </div>
 </header>
 
-<main>
   <section class="hero" aria-labelledby="hero-h">
     <div class="wrap">
       <h1 id="hero-h" class="intro"><b>Vier Apps für den eigenen Alltag.</b> Gebaut in Stuttgart, offen für Familie und Freunde.</h1>
-      <ul class="names">
-        <li><a href="#ready-set">
+      <div class="pic">
+        <img src="img/alex.webp" srcset="img/alex-640.webp 640w, img/alex.webp 1024w" sizes="(max-width:760px) 100vw, 520px" width="1024" height="1535" alt="Alex im lila T-Shirt, umringt von kleinen Figuren von sich selbst, die rufen, zeigen und es sich gemütlich machen">
+        <a class="bub b-rs tail-r" href="#ready-set" style="--x:-6%;--y:5%;--r:-5deg;--d:.15s">
           <span class="wm wm-rs" aria-label="Ready. Set.">Ready<span class="d"></span><span class="gap"></span>Set<span class="d"></span></span>
-          <span class="what">Workouts mit animierten Figuren</span></a></li>
-        <li><a href="#on-track" id="ot-line">
-          <span class="wm wm-ot" aria-label="On. Track"><span>On</span><span class="sw"><i></i></span><span>Track</span></span>
-          <span class="what">Lauf-Coach mit Plan und Tagesform</span></a></li>
-        <li><a href="#wort-laut">
+          <span class="sub">Workouts mit Figuren</span></a>
+        <a class="bub b-wl tail-b" href="#wort-laut" style="--x:63%;--y:16%;--r:4deg;--d:.3s;--tx:62%">
           <span class="wm wm-wl" aria-label="Wort. Laut.">wort<span class="d">.</span>laut<span class="d">.</span></span>
-          <span class="what">Liest deine E-Books vor</span></a></li>
-        <li><a href="#slot-in">
+          <span class="sub">Liest deine E-Books vor</span></a>
+        <a class="bub b-ot tail-b" href="#on-track" id="ot-line" style="--x:76%;--y:49%;--r:-3deg;--d:.45s;--tx:40px">
+          <span class="wm wm-ot" aria-label="On. Track"><span>On</span><span class="sw"><i></i></span><span>Track</span></span>
+          <span class="sub">Lauf-Coach mit Plan</span></a>
+        <a class="bub b-si tail-l" href="#slot-in" style="--x:72%;--y:83%;--r:3deg;--d:.6s">
           <span class="wm wm-si" aria-label="Slot. In.">Slot<span class="d">.</span>&nbsp;In<span class="d">.</span></span>
-          <span class="what">Alle Kalender, ein Buchungslink</span></a></li>
-      </ul>
+          <span class="sub">Ein Link, alle Kalender</span></a>
+      </div>
     </div>
   </section>
+</div>
 
   <section class="band rs" id="ready-set" aria-label="Ready. Set.">
     <div class="wrap">
@@ -231,7 +256,7 @@ footer a{text-decoration-color:var(--olive);text-underline-offset:3px}
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce){ot.classList.add('on');return;}
   requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('ready');});});
-  setTimeout(function(){ot.classList.add('on');},1100);
+  setTimeout(function(){ot.classList.add('on');},1500);
 })();
 </script>
 </body>
