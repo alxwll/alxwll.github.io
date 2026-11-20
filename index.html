@@ -128,10 +128,16 @@ footer{padding:44px 0 56px;font-size:15px;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
 footer a{text-decoration-color:var(--olive);text-underline-offset:3px}
 
-@media (max-width:760px){
+@media (min-width:901px) and (max-width:1220px){
+  .bub .wm{font-size:24px}
+  .b-ot{--x:56%!important;--tx:140px!important}
+  .b-wl{--x:58%!important}
+}
+@media (max-width:560px){.pic{margin:0 -24px;width:auto}}
+@media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:8px}
   .intro{padding:20px 0 0;max-width:none}
-  .pic{margin:0 -24px}
+  .pic{margin:0 auto;width:100%;max-width:560px}
   .bub{padding:8px 11px 7px;border-width:2.5px;border-radius:14px;box-shadow:4px 4px 0 #141414}
   .bub .wm{font-size:19px}
   .bub .sub{display:none}
